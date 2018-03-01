@@ -51,7 +51,7 @@ def report_pss(pid, verbose=False):
         for entry in sorted_tuples:
             print "%d kB\t%s" % (entry[0], entry[1])
 
-        print "Total Pss:", total_pss, "kB", "(which are:", total_pss*0.001, "MB)"
+        print "Total Pss:", total_pss, "kB", "(", total_pss*0.001, "MB)"
 
     return total_pss
 
@@ -69,7 +69,7 @@ def report_all_processes(expr):
                 total_pss += pss
 
     print ""
-    print "Total Pss:", total_pss, "kB", "(which are:", total_pss*0.001, "MB)"
+    print "Total Pss:", total_pss, "kB", "(", total_pss*0.001, "MB)"
 
 
 
