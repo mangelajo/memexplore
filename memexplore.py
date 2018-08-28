@@ -3,6 +3,7 @@ import collections
 import glob
 import re
 import sys
+import time
 
 
 """
@@ -51,7 +52,7 @@ def report_pss(pid, verbose=False):
         for entry in sorted_tuples:
             print "%d kB\t%s" % (entry[0], entry[1])
 
-        print "Total Pss:", total_pss, "kB", "(", total_pss*0.001, "MB)"
+        print time.strftime("%H:%M:%S") + " Total Pss (MB):", total_pss * 0.001
 
     return total_pss
 
@@ -69,9 +70,7 @@ def report_all_processes(expr):
                 total_pss += pss
 
     print ""
-    print "Total Pss:", total_pss, "kB", "(", total_pss*0.001, "MB)"
-
-
+    print time.strftime("%H:%M:%S") + " Total Pss (MB):", total_pss*0.001
 
 
 def main():
@@ -83,4 +82,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
